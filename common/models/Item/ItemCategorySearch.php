@@ -18,7 +18,7 @@ class ItemCategorySearch extends ItemCategory
     public function rules()
     {
         return [
-            [['id', 'name_category'], 'integer'],
+            [['id', 'parent_category'], 'integer'],
             [['name'], 'safe'],
         ];
     }
@@ -60,7 +60,7 @@ class ItemCategorySearch extends ItemCategory
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'name_category' => $this->name_category,
+            'parent_category' => $this->name_category,
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name]);

@@ -1,0 +1,31 @@
+kategori		barang
+
+#alat tulis		
+pulpen
+buku binder
+penggaris
+tipe x
+penghapus
+pilot
+
+
+#komputer		
+asus x451ca
+
+#handphone
+asus zenphone
+xiaomi redmi 2
+
+#elektronika		
+mesin cuci 2s Bersih
+kipas angin samsung 45k
+
+
+
+
+
+			
+
+
+
+

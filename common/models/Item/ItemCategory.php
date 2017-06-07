@@ -31,8 +31,8 @@ class ItemCategory extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'name_category'], 'required'],
-            [['name_category'], 'integer'],
+            [['name'], 'required'],
+            [['parent_category'], 'integer'],
             [['name'], 'string', 'max' => 255],
         ];
     }
@@ -45,7 +45,7 @@ class ItemCategory extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Name',
-            'name_category' => 'Name Category',
+            'parent_category' => 'Parent Category',
         ];
     }
 

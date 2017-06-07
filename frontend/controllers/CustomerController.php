@@ -6,6 +6,9 @@ use Yii;
 use frontend\models\Costumer;
 use frontend\models\OrderItem;
 use frontend\models\Order;
+
+use common\models\Item\ItemSearch;
+
 use frontend\models\CustomerSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -48,16 +51,19 @@ class CustomerController extends Controller
 
     public function actionShow()
     {
-        $OrderItem = new OrderItem();
-        $Customer = new Costumer();
-        $Order = new Order();
-        // $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $searchModel = new ItemSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        return $this->render('showorder',[
-                'OrderItem' => $OrderItem,
-                'Customer' => $Customer,
-                'Order' => $Order,
-            ]);
+        $searchCostumer = new CustomerSearch();
+        $dataProviderCostumer = $searchCostumer->search(Yii::$app->request->queryParams);
+
+        return $this->render('showorder', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+
+            'searchCostumer' => $searchCostumer,
+            'dataProviderCostumer' => $dataProviderCostumer,
+        ]);
     }
 
     /**

@@ -1,18 +1,14 @@
+
 <?php
-
-foreach ($OrderItem as $key => $value) {
-    echo $key."</br>".$value['order_id'];
-}
-
-
-
-foreach ($Customer as $key => $value) {
-    echo $key."</br>".$value['id'];
-}
-
-
-foreach ($Order as $key => $value) {
-    echo $key."</br>".$value;
-}
+    use yii\widgets\ListView;
 ?>
-</div>
+
+<?=
+
+ListView::widget([
+//    'dataProvider' => $dataProvider,
+    'dataProvider' => $dataProviderCostumer,
+    'itemView' => '_view',
+])
+
+?>
